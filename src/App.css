@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+}
+.wrapper {
+  padding: 20px 50px;
+  border: 1px solid black;
+  background-color: beige;
+}
+.input {
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: rgb(67, 67, 67);
+  color: white;
+  /* width: 100%; */
+  flex: 2;
+}
+.btn {
+  background-color: rgb(67, 67, 67);
+  border: 2px solid white;
+  padding: 15px;
+  color: white;
+  border-radius: 5px;
+}
+.task-wrapper {
+  display: flex;
+}
+.task-container {
+  display: flex;
+}
+.task-container p {
+  flex: 2;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+.form-input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid gray;
+}
+.form-btn {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+}
