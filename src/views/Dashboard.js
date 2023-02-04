@@ -15,7 +15,7 @@ const Dashboard = () => {
     if (isAuthenticated === "true") {
       setIsAuth(true);
     }
-  });
+  }, []);
   useEffect(() => {
     getTasks();
     getUser();
@@ -28,7 +28,7 @@ const Dashboard = () => {
     let userDetails = JSON.parse(localStorage.getItem("user"));
     console.log(userDetails);
     setUsers(userDetails);
-  }
+  };
   const getTasks = async () => {
     // const ApiUrl = "https://jsonplaceholder.typicode.com/todos";
     // const ApiUrl = "https:/localhost:5001/gettasks";
@@ -134,7 +134,7 @@ const Dashboard = () => {
   if (!isAuth) {
     return navigate("/");
   }
-  
+
   return (
     <div className="container">
       <p>Welcome {users.name}</p>

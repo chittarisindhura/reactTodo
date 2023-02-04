@@ -9,26 +9,27 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios
-      .post("/login", { username: email, password })
-      .then((response) => {
-        const users = response.data;
-        //   dispatch(loginSuccess(users));
-        localStorage.setItem("auth", true);
-        localStorage.setItem("jwt", users.auth_token);
-        localStorage.setItem("user", JSON.stringify(users));
-        // console.log("users", users); // undefined
-        return navigate("/dashboard");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const res = await axios.post("/login", { username: email, password });
+    // .then((response) => {
+    //   const users = response.data;
+    //   //   dispatch(loginSuccess(users));
+    //   // console.log("users", users); // undefined
+    //   localStorage.setItem("jwt", users.auth_token);
+    //   localStorage.setItem("user", JSON.stringify(users));
 
-    // if (res.status === 200) {
-    //   // console.log(res.data.name);
-    //   localStorage.setItem("auth", true);
-    //   return navigate("/dashboard");
-    // }
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // });
+    // console.log(res);
+
+    if (res.status === 200) {
+      const users = res.data;
+      localStorage.setItem("user", JSON.stringify(users));
+      console.log(res.data.name);
+      localStorage.setItem("auth", true);
+      return navigate("/dashboard");
+    }
   };
   return (
     <div className="form-container">
