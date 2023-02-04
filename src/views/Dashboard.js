@@ -96,7 +96,7 @@ const Dashboard = () => {
   };
   const deleteTask = async (id) => {
     const ApiUrl = "/delete";
-    const res = axios.post(`${ApiUrl}/${id}`);
+    axios.post(`${ApiUrl}/${id}`);
     const taskData = tasks.filter((task) => task.taskid !== id);
     setTasks(taskData);
 
