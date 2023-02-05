@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+const baseUrl = "http://localhost:5001";
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -8,9 +9,11 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
+    const ApiUrl = `${baseUrl}/register`;
+
     e.preventDefault();
     if (password === confirmPassword) {
-      const res = await axios.post("/register", { name, email, password });
+      const res = await axios.post(ApiUrl, { name, email, password });
       // console.log(res);
       if (res.status === 200) {
         return navigate("/");

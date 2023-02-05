@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+const baseUrl = "http://localhost:5001";
+
+
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -8,8 +11,9 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const ApiUrl = `${baseUrl}/login`;
 
-    const res = await axios.post("/login", { username: email, password });
+    const res = await axios.post(ApiUrl, { username: email, password });
     // .then((response) => {
     //   const users = response.data;
     //   //   dispatch(loginSuccess(users));

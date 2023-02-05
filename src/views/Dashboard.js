@@ -39,7 +39,7 @@ const Dashboard = () => {
   const addTasks = async (taskName) => {
     const id = uuidv4();
     // const ApiUrl = "https://jsonplaceholder.typicode.com/todos";
-    const ApiUrl = "/addtask";
+    const ApiUrl = `${baseUrl}/addtask`;
     const taskData = {
       id: id,
       title: taskName,
@@ -54,7 +54,7 @@ const Dashboard = () => {
   // console.log("tasks", tasks);
   const completeTask = async (id) => {
     // console.log("id", id);
-    const ApiUrl = "/update";
+    const ApiUrl = `${baseUrl}/update`;
 
     const taskData = {
       id: id,
@@ -75,7 +75,7 @@ const Dashboard = () => {
   };
   const undoTask = async (id) => {
     // console.log("id", id);
-    const ApiUrl = "/update";
+    const ApiUrl = `${baseUrl}/update`;
 
     const taskData = {
       id: id,
@@ -95,7 +95,7 @@ const Dashboard = () => {
     // console.log("taskData", taskData);
   };
   const deleteTask = async (id) => {
-    const ApiUrl = "/delete";
+    const ApiUrl = `${baseUrl}/delete`;
     axios.post(`${ApiUrl}/${id}`);
     const taskData = tasks.filter((task) => task.taskid !== id);
     setTasks(taskData);
@@ -103,7 +103,7 @@ const Dashboard = () => {
     // console.log(taskData);
   };
   const updateTask = async (id, taskName) => {
-    const ApiUrl = "/update";
+    const ApiUrl = `${baseUrl}/update`;
     const taskData = {
       id: id,
       title: taskName,
@@ -124,7 +124,9 @@ const Dashboard = () => {
     }
   };
   const logout = async () => {
-    const res = await axios.post("/logout");
+    const ApiUrl = `${baseUrl}/logout`;
+
+    const res = await axios.post(ApiUrl);
     if (res.status === 200) {
       localStorage.setItem("auth", false);
       localStorage.clear();
