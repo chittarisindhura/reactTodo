@@ -27,13 +27,13 @@ const Dashboard = () => {
     // return response;
 
     let userDetails = JSON.parse(localStorage.getItem("user"));
-    console.log(userDetails);
+    // console.log(userDetails);
     setUsers(userDetails);
   };
   const getTasks = async () => {
     // const ApiUrl = "https://jsonplaceholder.typicode.com/todos";
-    // const ApiUrl = "https:/localhost:5001/gettasks";
-    const res = await axios.get("/gettasks");
+    const ApiUrl = `${baseUrl}/gettasks`;
+    const res = await axios.get(ApiUrl);
     setTasks(res.data);
   };
   const addTasks = async (taskName) => {

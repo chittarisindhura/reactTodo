@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-const baseUrl = "http://localhost:5001";
+const baseUrl = "https://drab-teal-moose-tutu.cyclic.app";
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
