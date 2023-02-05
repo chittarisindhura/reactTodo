@@ -34,7 +34,6 @@ const Dashboard = () => {
     // const ApiUrl = "https:/localhost:5001/gettasks";
     const res = await axios.get("/gettasks");
     setTasks(res.data);
-    // console.log("res", res);
   };
   const addTasks = async (taskName) => {
     const id = uuidv4();
