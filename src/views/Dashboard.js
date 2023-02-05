@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const baseUrl = "http://localhost:5001";
 const Dashboard = () => {
   const navigate = useNavigate();
   const [tasks, setTasks] = useState("");
